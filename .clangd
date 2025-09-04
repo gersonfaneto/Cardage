@@ -1,0 +1,8 @@
+CompileFlags:
+  Add:
+    - "-Wall"
+    - "-Wextra"
+    - "-Wpedantic"
+    - "-Werror"
+    - "-std=gnu99"
+  CompilationDatabase: .build/
