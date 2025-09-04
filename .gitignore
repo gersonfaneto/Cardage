@@ -1,2 +1,6 @@
 # Nix
 /.direnv/
+
+# ...
+/.build/
+/dist/
