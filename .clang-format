@@ -1,0 +1,37 @@
+# vim:ft=yaml:nospell:
+
+BasedOnStyle: LLVM
+IndentWidth: 2
+TabWidth: 2
+UseTab: Never
+
+# Braces & indentation
+BreakBeforeBraces: Allman
+AllowShortFunctionsOnASingleLine: Empty
+AllowShortBlocksOnASingleLine: Never
+AllowShortIfStatementsOnASingleLine: Never
+AllowShortLoopsOnASingleLine: false
+IndentCaseLabels: true
+
+# Spaces
+SpaceBeforeParens: ControlStatements
+SpaceInEmptyParentheses: false
+SpacesInParentheses: false
+SpacesInCStyleCastParentheses: true
+SpacesInContainerLiterals: true
+
+# Line length
+ColumnLimit: 0
+
+# Includes
+SortIncludes: Never
+IncludeBlocks: Preserve
+
+# Alignment
+AlignConsecutiveAssignments: Consecutive
+AlignConsecutiveDeclarations: Consecutive
+AlignOperands: DontAlign
+AlignTrailingComments: true
+
+# Misc
+PointerAlignment: Left
