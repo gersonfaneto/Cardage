@@ -9,8 +9,14 @@
 
 #include <netdb.h>
 
+#include <caffe/core/assert.h>
+
+#include <raylib.h>
+
 void server(void);
 void client(int port);
+
+#ifndef __GAME_UI__
 
 int main(int argc, char* argv[])
 {
@@ -34,6 +40,51 @@ int main(int argc, char* argv[])
 
   return 0;
 }
+
+#else
+
+#define WINDOW_WIDHT 800
+#define WINDOW_HEIGHT 600
+
+int main(void)
+{
+  SetConfigFlags(FLAG_WINDOW_RESIZABLE);
+
+  InitWindow(WINDOW_WIDHT, WINDOW_HEIGHT, "Cardage");
+
+  SetExitKey(KEY_Q);
+
+  SetTargetFPS(60);
+
+  while (!WindowShouldClose())
+  {
+    int wh, ww;
+
+    wh = GetScreenHeight();
+    ww = GetScreenWidth();
+
+    BeginDrawing();
+
+    {
+      DrawFPS(10, 10);
+
+      ClearBackground(GetColor(0xFBF1C7FF));
+
+      if (wh < WINDOW_HEIGHT || ww < WINDOW_WIDHT)
+      {
+        ClearBackground(RED);
+      }
+    }
+
+    EndDrawing();
+  }
+
+  CloseWindow();
+
+  return 0;
+}
+
+#endif
 
 void server(void)
 {
